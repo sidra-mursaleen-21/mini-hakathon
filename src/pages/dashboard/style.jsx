@@ -20,7 +20,7 @@ const style = {
     display: "grid",
     w: { base: "90%", sm: "80%" },
     gridTemplateColumns: { base: "100%", md: "50% 50% " },
-    gridTemplateRows: "110px 110px",
+    gridTemplateRows: "110px 110px 110px",
     justifyContent: "center",
     gap: "20px 20px ",
     h: "390px",
