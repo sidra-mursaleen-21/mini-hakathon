@@ -51,23 +51,12 @@ const Dashboard = () => {
 
     onValue(ref(database, "data/"), (snapshot) => {
       setData(Object.values(snapshot.val()));
-      bloodgroup.map((object) => {
-        return userInformation.bloodGroup == object.group ?
-         object.doner.map((bloodgroup) => {
-           data.map((donerobject) => {
-            return donerobject.role == "doner" &&
-              donerobject.bloodGroup == bloodgroup
-              ? setDoner([donerobject])
-              : null;
-          }); 
-        }) : null
-      });
     });
   }, [userInformation]);
 
   return (
     <>
-    {console.log(doner)}
+      {console.log(doner)}
       <Appbar />
       <Flex sx={style.container}>
         {show ? (
@@ -107,26 +96,32 @@ const Dashboard = () => {
                   </Flex>
                 ) : (
                   <Box sx={style.donerContainer}>
-                    {doner.map((object) => {
-                      return (
-                        <>
-                          <Flex
-                            onClick={() => {
-                              setDonerInformation(object), setIsOpen(true);
-                            }}
-                            sx={style.doner}
-                          >
-                            <Circle sx={style.circle}>
-                              {object.bloodGroup}
-                            </Circle>
-                            <Box>
-                              <Text fontWeight="bold">{object.username}</Text>
-                              <Text>{object.address}</Text>
-                              <Text color="#a22e2b">{object.phone}</Text>
-                            </Box>
-                          </Flex>
-                        </>
-                      );
+                    {object.doner.map((bloodgroup) => {
+                      return data.map((donerobject) => {
+                        return donerobject.role == "doner" &&
+                          donerobject.bloodGroup == bloodgroup ? (
+                          <>
+                            <Flex
+                              onClick={() => {
+                                setDonerInformation(donerobject),
+                                  setIsOpen(true);
+                              }}
+                              sx={style.doner}
+                            >
+                              <Circle sx={style.circle}>
+                                {donerobject.bloodGroup}
+                              </Circle>
+                              <Box>
+                                <Text fontWeight="bold">
+                                  {donerobject.username}
+                                </Text>
+                                <Text>{donerobject.address}</Text>
+                                <Text color="#a22e2b">{donerobject.phone}</Text>
+                              </Box>
+                            </Flex>
+                          </>
+                        ) : null;
+                      });
                     })}
                   </Box>
                 )}

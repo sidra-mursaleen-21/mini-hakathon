@@ -99,7 +99,11 @@ const Signup = () => {
               <CustomButton type="submit">sign up</CustomButton>
             </Flex>
           </Box>
-          <Image w="500px" h="500px" src="./images/image-5.png" />
+          <Image
+            w="600px"
+            h="500px"
+            src="./images/image-5.png"
+          />
         </Flex>
       </Flex>
     </>
