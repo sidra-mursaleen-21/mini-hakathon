@@ -1,0 +1,55 @@
+const style = {
+  heading: {
+    fontSize: "18px",
+    fontWeight: "bold",
+    mb: "40px",
+    w: "90%",
+    textAlign: "center",
+    borderBottom: "2px solid lightgrey",
+  },
+  container: {
+    backgroundColor: "#e8e8e8",
+    justifyContent: "center",
+    alignItems: "center",
+    flexDirection: "column",
+    p: "50px 0px",
+    minH: "100vh",
+    h: "100%",
+  },
+  donerContainer: {
+    display: "grid",
+    w: { base: "90%", sm: "80%" },
+    gridTemplateColumns: { base: "100%", md: "50% 50% " },
+    gridTemplateRows: "110px 110px",
+    justifyContent: "center",
+    gap: "20px 20px ",
+    h: "390px",
+  },
+  doner: {
+    p: { base: "0px 15px", sm: "0px 40px" },
+    alignItems: "center",
+    gap: { base: "20px", sm: "40px" },
+    backgroundColor: "white",
+    cursor: "pointer",
+    borderRadius: "10px",
+  },
+  circle: {
+    fontSize: "25px",
+    color: "white",
+    h: "60px",
+    w: "60px",
+    backgroundColor: "#a22e2b",
+    fontWeight: "bold",
+  },
+  modal: {
+    backgroundColor: "white",
+    w: { base: "90%", sm: "70%" },
+    p: "40px 0px",
+    gap: "20px",
+    flexDirection: "column",
+    alignItems: "center",
+    borderRadius: "20px",
+  },
+};
+
+export default style;
